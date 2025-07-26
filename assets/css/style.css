@@ -1,0 +1,97 @@
+/* ===== Root ===== */
+:root{
+    --bg:#0e1117;
+    --accent:#58a6ff;
+    --text:#e6edf3;
+    --muted:#8b949e;
+    --card-bg:rgba(255,255,255,.05);
+    --radius:1rem;
+    --blur:20px;
+    font-size:16px;
+    font-family:"Inter",Segoe UI,Helvetica,Arial,sans-serif;
+}
+/* Light mode (optional) */
+@media (prefers-color-scheme:light){
+    :root{
+        --bg:#f2f4f8;
+        --card-bg:rgba(255,255,255,.8);
+        --text:#1c1f23;
+        --muted:#5f6b7a;
+    }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);min-height:100vh;}
+a{color:var(--accent);text-decoration:none}
+
+/* ===== Hero ===== */
+.hero{
+    padding:4rem 1rem 3rem;
+    text-align:center;
+    background:radial-gradient(circle at top left,#3b82f6 0%,#9333ea 100%);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+}
+.brand{font-size:3rem;font-weight:800;margin-bottom:.2rem;}
+.sub{color:var(--muted);font-size:1rem;margin-bottom:2rem;text-shadow:none}
+#search{
+    padding:.75rem 1rem;
+    width:min(28rem,90%);
+    border:none;border-radius:2rem;
+    font-size:1rem;
+    outline:none;
+}
+
+/* ===== Chips ===== */
+.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin:2rem 0}
+.chips button{
+    padding:.4rem .9rem;border:none;border-radius:2rem;
+    background:var(--card-bg);backdrop-filter:blur(var(--blur));
+    color:var(--text);cursor:pointer;font-size:.875rem
+}
+.chips button.active, .chips button:hover{background:var(--accent);color:#fff}
+
+/* ===== Cards grid ===== */
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:1.5rem;
+    padding:0 1rem 4rem;
+    max-width:1200px;
+    margin-inline:auto;
+}
+.card{
+    background:var(--card-bg);
+    backdrop-filter:blur(var(--blur));
+    padding:1rem;border-radius:var(--radius);
+    display:flex;flex-direction:column;cursor:pointer;transition:transform .2s
+}
+.card:hover{transform:translateY(-6px)}
+.card img{width:100%;aspect-ratio:1/1;border-radius:.5rem;object-fit:cover}
+.card h3{margin:.8rem 0 .4rem;font-size:1.1rem}
+.card p{font-size:.875rem;color:var(--muted);flex-grow:1}
+.tag{font-size:.75rem;background:var(--accent);color:#fff;padding:.15rem .5rem;border-radius:.5rem;align-self:flex-start;margin-top:.6rem}
+
+/* ===== Modal ===== */
+.modal{position:fixed;inset:0;background:#0008;display:flex;align-items:center;justify-content:center;z-index:20}
+.hidden{display:none}
+.modal-inner{
+    background:var(--bg);padding:2rem;border-radius:var(--radius);max-width:480px;width:90%;
+    box-shadow:0 12px 32px #0005;position:relative;text-align:center;
+}
+.modal-inner img{width:140px;border-radius:.7rem;margin-bottom:1rem}
+.close{position:absolute;top:.6rem;right:.6rem;background:none;border:none;font-size:1.2rem;color:var(--muted);cursor:pointer}
+
+/* ===== Buttons ===== */
+.btn-download, .ghost{
+    display:inline-block;margin-top:1rem;padding:.6rem 1.2rem;border-radius:2rem;border:none;
+    background:var(--accent);color:#fff;font-weight:600;cursor:pointer
+}
+.ghost{background:none;border:1px solid var(--accent);color:var(--accent)}
+
+/* ===== Admin misc ===== */
+.admin-wrapper .row{margin-bottom:1rem;display:flex;flex-direction:column}
+.admin-wrapper input,.admin-wrapper textarea,.admin-wrapper select{
+    padding:.55rem .8rem;border-radius:.5rem;border:1px solid #0002;background:var(--card-bg);color:var(--text)}
+.admin-wrapper textarea{min-height:80px;resize:vertical}
+.tip{font-size:.8rem;color:var(--muted);margin-top:.5rem}

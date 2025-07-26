@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0"/>
+    <title>App & PDF Downloader</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<header class="hero">
+    <h1 class="brand">Download Hub</h1>
+    <p class="sub">Chrome extensions • Windows software • Mobile apps • Tutorials</p>
+
+    <input type="search"
+           id="search"
+           placeholder="Search by name, category or tag …"/>
+</header>
+
+<main>
+    <!-- Category filter buttons -->
+    <section id="filters" class="chips"></section>
+
+    <!-- Dynamic grid -->
+    <section id="grid" class="cards-grid"></section>
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+    <div class="modal-inner">
+        <button id="closeModal" class="close">✕</button>
+        <img id="modalCover" alt="cover"/>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <p id="modalMeta"></p>
+        <a id="modalBtn" target="_blank" class="btn-download">Download</a>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
